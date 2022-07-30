@@ -1,7 +1,7 @@
 // https://github.com/vercel/next.js/blob/canary/packages/create-next-app/create-app.ts
 import chalk from 'chalk';
 import cpy from 'cpy';
-// import fs from 'fs';
+import fs from 'fs-extra';
 // import os from 'os';
 import path from 'path';
 import { isWriteable, makeDir, isFolderEmpty } from './utils';
@@ -45,6 +45,11 @@ export async function createApp({
   await cpy('**', root, {
     parents: true,
     cwd: path.join(__dirname, 'template'),
+  });
+
+  const renameFiles = ['editorconfig', 'eslintignore', 'eslintrc.js', 'gitignore'];
+  renameFiles.forEach(file => {
+    fs.renameSync(path.join(root, file), path.join(root, `.${file}`));
   });
 
   const installFlags = { packageManager, isOnline: true };
