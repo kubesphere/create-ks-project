@@ -1,6 +1,6 @@
 {
   "name": "create-ks-app",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "main": "index.js",
   "license": "MIT",
   "repository": {
@@ -30,6 +30,7 @@
     "commander": "2.20.0",
     "cpy": "7.3.0",
     "cross-spawn": "6.0.5",
+    "fs-extra": "^10.1.0",
     "got": "10.7.0",
     "prompts": "2.1.0",
     "rimraf": "3.0.0",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.2",
+    "@types/fs-extra": "^8.0.1",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
     "eslint": "^7.32.0",
