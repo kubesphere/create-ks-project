@@ -101,7 +101,7 @@ export async function createApp({
   console.log('Inside that directory, you can run several commands:');
   console.log();
   console.log(
-    chalk.cyan(`  ${packageManager} ${useYarn ? '' : 'run '}create-plugin <plugin-name>`),
+    chalk.cyan(`  ${packageManager} ${useYarn ? '' : 'run '}create:plugin`),
   );
   console.log('    Create a new plugin.');
   console.log();
@@ -121,7 +121,7 @@ export async function createApp({
   console.log();
   console.log(chalk.cyan('  cd'), cdpath);
   console.log(
-    `  ${chalk.cyan(`${packageManager} ${useYarn ? '' : 'run '}create-plugin <plugin-name>`)}`,
+    `  ${chalk.cyan(`${packageManager} ${useYarn ? '' : 'run '}create:plugin`)}`,
   );
   console.log();
   console.log('And');
