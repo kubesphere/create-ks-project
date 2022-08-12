@@ -1,9 +1,6 @@
 
 module.exports = {
-  plugins: [
-    'cluster',
-    'access'
-  ],
+  // extensions: [],
   webpack: {
     base: {},
     dll: {},

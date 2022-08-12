@@ -32,7 +32,7 @@ async function run(): Promise<void> {
       type: 'text',
       name: 'path',
       message: 'What is your project named?',
-      initial: 'my-app',
+      initial: 'my-ext',
       validate: name => {
         const validation = validateNpmName(path.basename(path.resolve(name)));
         if (validation.valid) {
@@ -52,7 +52,7 @@ async function run(): Promise<void> {
       '\nPlease specify the project directory:\n' +
         `  ${chalk.cyan(program.name())} ${chalk.green('<project-directory>')}\n` +
         'For example:\n' +
-        `  ${chalk.cyan(program.name())} ${chalk.green('my-app')}\n\n` +
+        `  ${chalk.cyan(program.name())} ${chalk.green('my-ext')}\n\n` +
         `Run ${chalk.cyan(`${program.name()} --help`)} to see all options.`,
     );
     process.exit(1);
@@ -87,13 +87,13 @@ async function notifyUpdate(): Promise<void> {
     if (res?.latest) {
       const pkgManager = getPkgManager();
       console.log(
-        chalk.yellow.bold('A new version of `create-ks-app` is available!') +
+        chalk.yellow.bold('A new version of `create-ks-ext` is available!') +
           '\n' +
           'You can update by running: ' +
           chalk.cyan(
             pkgManager === 'yarn'
-              ? 'yarn global add create-ks-app'
-              : `${pkgManager} install --global create-ks-app`,
+              ? 'yarn global add create-ks-ext'
+              : `${pkgManager} install --global create-ks-ext`,
           ) +
           '\n',
       );

@@ -37,7 +37,7 @@ export async function createApp({
   const originalDirectory = process.cwd();
 
   console.log();
-  console.log(`Creating a new KS app in ${chalk.green(root)}.`);
+  console.log(`Creating a new KubeSphere extension project in ${chalk.green(root)}.`);
   console.log();
 
   process.chdir(root);
@@ -47,7 +47,14 @@ export async function createApp({
     cwd: path.join(__dirname, 'template'),
   });
 
-  const renameFiles = ['editorconfig', 'eslintignore', 'eslintrc.js', 'gitignore'];
+  const renameFiles = [
+    'editorconfig',
+    'eslintignore',
+    'eslintrc.js',
+    'gitignore',
+    'prettierignore',
+    'prettierrc.js',
+  ];
   renameFiles.forEach(file => {
     fs.renameSync(path.join(root, file), path.join(root, `.${file}`));
   });
@@ -100,10 +107,8 @@ export async function createApp({
   console.log(`${chalk.green('Success!')} Created ${appName} at ${appPath}`);
   console.log('Inside that directory, you can run several commands:');
   console.log();
-  console.log(
-    chalk.cyan(`  ${packageManager} ${useYarn ? '' : 'run '}create:plugin`),
-  );
-  console.log('    Create a new plugin.');
+  console.log(chalk.cyan(`  ${packageManager} ${useYarn ? '' : 'run '}create:ext`));
+  console.log('    Create a new extension.');
   console.log();
   console.log(chalk.cyan(`  ${packageManager} ${useYarn ? '' : 'run '}dev`));
   console.log('    Starts the development server.');
@@ -120,9 +125,7 @@ export async function createApp({
   console.log('We suggest that you begin by typing:');
   console.log();
   console.log(chalk.cyan('  cd'), cdpath);
-  console.log(
-    `  ${chalk.cyan(`${packageManager} ${useYarn ? '' : 'run '}create:plugin`)}`,
-  );
+  console.log(`  ${chalk.cyan(`${packageManager} ${useYarn ? '' : 'run '}create:ext`)}`);
   console.log();
   console.log('And');
   console.log();
