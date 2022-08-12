@@ -1,14 +1,14 @@
 {
-  "name": "create-ks-app",
+  "name": "create-ks-ext",
   "version": "0.0.6",
   "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kubesphere/create-ks-app"
+    "url": "https://github.com/kubesphere/create-ks-ext"
   },
   "bin": {
-    "create-ks-app": "./dist/index.js"
+    "create-ks-ext": "./dist/index.js"
   },
   "files": [
     "dist"
