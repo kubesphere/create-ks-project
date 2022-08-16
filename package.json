@@ -1,6 +1,6 @@
 {
   "name": "create-ks-ext",
-  "version": "0.0.6",
+  "version": "0.0.2",
   "main": "index.js",
   "license": "MIT",
   "repository": {

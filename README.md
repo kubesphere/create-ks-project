@@ -14,7 +14,7 @@ You don't need to install or configure tools like webpack, Babel, TypeScript, et
         - [Install and change Node version with nvm](https://nodejs.org/en/download/package-manager/#nvm)
     - [Binary Download](https://nodejs.org/en/download/)
     - [Package manager](https://nodejs.org/en/download/package-manager/)
-- `yarn` [Installation](https://yarnpkg.com/getting-started/install)
+- `yarn` [Installation](https://classic.yarnpkg.com/en/docs/install)
 - `git` [installation](https://github.com/git-guides/install-git)
 - Ensure the ports 8000 and 8001 is available for the local environment, we use the two ports for the bff server and webpack-dev-server.
 
