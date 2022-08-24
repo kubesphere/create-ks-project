@@ -1,7 +1,14 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import chalk from 'chalk';
 import spawn from 'cross-spawn';
+import got from 'got';
+import tar from 'tar';
+import { Stream } from 'stream';
+import { promisify } from 'util';
+import cliProgress from 'cli-progress';
 // import type { PackageManager } from './get-pkg-manager';
+
+const pipeline = promisify(Stream.pipeline);
 
 interface InstallArgs {
   /**
@@ -105,4 +112,17 @@ export function install(
       resolve();
     });
   });
+}
+
+export function installFromCache(root: string): any {
+  console.log(chalk.yellow('Installing packages from cache...'));
+  const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
+  bar.start(100, 0);
+  const downStream = got.stream('https://ks-deps.gd2.qingstor.com/deps.tar.gz');
+
+  downStream.on('downloadProgress', progress => {
+    bar.update(progress.percent * 100);
+  });
+
+  return pipeline(downStream, tar.extract({ cwd: root }));
 }

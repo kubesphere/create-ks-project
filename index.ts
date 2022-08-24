@@ -19,6 +19,12 @@ const program = new Commander.Command(packageJson.name)
   .action(name => {
     projectPath = name;
   })
+  .option(
+    '-f, --fast-mode',
+    `
+  Install dependencies from cache.
+`,
+  )
   .allowUnknownOption()
   .parse(process.argv);
 
@@ -76,6 +82,7 @@ async function run(): Promise<void> {
   await createApp({
     appPath: resolvedProjectPath,
     packageManager: getPkgManager(),
+    fastMode: program.fastMode,
   });
 }
 
