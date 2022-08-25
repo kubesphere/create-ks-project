@@ -58,6 +58,10 @@ And
 
 ```
 
+## Options
+`create-ks-ext` comes with the following option:
+* -f, --fast-mode - Install dependencies from a tarball.
+
 ## Create your KubeSphere extension
 
 Switch to the directory you just created and run the command:
@@ -74,7 +78,7 @@ $ ksc create:ext
 ? Description this is demo
 ? Author chenzhen
 ? Language JavaScript
-? Ensure to create extension: [demo] ? Yes
+? Are you sure you want to create extension: [demo] ? Yes
 ✨  Done in 12.64s.
 ```
 Then the extension will be created in the `extensions` directory. The files structure of the extension is as follows:
