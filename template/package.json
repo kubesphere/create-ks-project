@@ -144,7 +144,7 @@
     "yargs": "^17.0.1"
   },
   "dependencies": {
-    "@ks-console/bootstrap": "^4.0.0-alpha.11",
+    "@ks-console/bootstrap": "^4.0.0-alpha.12",
     "@ks-console/server": "^4.0.0-alpha.7",
     "@ks-console/shared": "^4.0.0-alpha.6"
   }
