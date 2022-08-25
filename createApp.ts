@@ -1,20 +1,22 @@
 // https://github.com/vercel/next.js/blob/canary/packages/create-next-app/create-app.ts
+import retry from 'async-retry';
 import chalk from 'chalk';
 import cpy from 'cpy';
 import fs from 'fs-extra';
-// import os from 'os';
 import path from 'path';
 import { isWriteable, makeDir, isFolderEmpty } from './utils';
 import packageJson from './template/package.json';
-import { install } from './helpers/install';
+import { install, installFromCache } from './helpers/install';
 import { tryGitInit } from './helpers/git';
 
 export async function createApp({
   appPath,
   packageManager,
+  fastMode,
 }: {
   appPath: string;
   packageManager: string;
+  fastMode: boolean;
 }): Promise<void> {
   const root = path.resolve(appPath);
 
@@ -59,37 +61,50 @@ export async function createApp({
     fs.renameSync(path.join(root, file), path.join(root, `.${file}`));
   });
 
-  const installFlags = { packageManager, isOnline: true };
-
-  const dependencies: string[] = Object.keys(packageJson.dependencies).map(key => {
-    // @ts-ignore
-    return `${key}@${packageJson.dependencies[key]}`;
-  });
-  if (dependencies.length) {
-    console.log();
-    console.log('Installing dependencies:');
-    for (const dependency of dependencies) {
-      console.log(`- ${chalk.cyan(dependency)}`);
+  if (fastMode) {
+    try {
+      console.log(`Downloading dependencies. This might take a moment.`);
+      console.log();
+      await retry(() => installFromCache(root), {
+        retries: 3,
+      });
+      console.log();
+    } catch (e) {
+      console.error(e);
     }
-    console.log();
+  } else {
+    const installFlags = { packageManager, isOnline: true };
 
-    await install(root, dependencies, installFlags);
-  }
+    const dependencies: string[] = Object.keys(packageJson.dependencies).map(key => {
+      // @ts-ignore
+      return `${key}@${packageJson.dependencies[key]}`;
+    });
+    if (dependencies.length) {
+      console.log();
+      console.log('Installing dependencies:');
+      for (const dependency of dependencies) {
+        console.log(`- ${chalk.cyan(dependency)}`);
+      }
+      console.log();
 
-  const devDependencies: string[] = Object.keys(packageJson.devDependencies).map(key => {
-    // @ts-ignore
-    return `${key}@${packageJson.devDependencies[key]}`;
-  });
-  if (devDependencies.length) {
-    console.log();
-    console.log('Installing devDependencies:');
-    for (const devDependency of devDependencies) {
-      console.log(`- ${chalk.cyan(devDependency)}`);
+      await install(root, dependencies, installFlags);
     }
-    console.log();
 
-    const devInstallFlags = { devDependencies: true, ...installFlags };
-    await install(root, devDependencies, devInstallFlags);
+    const devDependencies: string[] = Object.keys(packageJson.devDependencies).map(key => {
+      // @ts-ignore
+      return `${key}@${packageJson.devDependencies[key]}`;
+    });
+    if (devDependencies.length) {
+      console.log();
+      console.log('Installing devDependencies:');
+      for (const devDependency of devDependencies) {
+        console.log(`- ${chalk.cyan(devDependency)}`);
+      }
+      console.log();
+
+      const devInstallFlags = { devDependencies: true, ...installFlags };
+      await install(root, devDependencies, devInstallFlags);
+    }
   }
 
   if (tryGitInit(root)) {
