@@ -10,6 +10,8 @@ import cliProgress from 'cli-progress';
 
 const pipeline = promisify(Stream.pipeline);
 
+const DEPS_URL = 'https://deps-down.pek3b.qingstor.com/deps.tar.gz';
+
 interface InstallArgs {
   /**
    * Indicate whether to install packages using npm, pnpm or Yarn.
@@ -115,10 +117,9 @@ export function install(
 }
 
 export function installFromCache(root: string): any {
-  console.log(chalk.yellow('Installing packages from cache...'));
   const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
   bar.start(100, 0);
-  const downStream = got.stream('https://ks-deps.gd2.qingstor.com/deps.tar.gz');
+  const downStream = got.stream(DEPS_URL);
 
   downStream.on('downloadProgress', progress => {
     bar.update(progress.percent * 100);

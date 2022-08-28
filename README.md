@@ -38,9 +38,6 @@ Inside that directory, you can run several commands:
   yarn dev
     Starts the development server.
 
-  yarn build:dll
-    Builds the dll files.
-
   yarn build:prod
     Builds the app for production.
 
