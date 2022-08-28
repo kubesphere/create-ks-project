@@ -63,7 +63,7 @@ export async function createApp({
 
   if (fastMode) {
     try {
-      console.log(`Downloading dependencies. This might take a moment.`);
+      console.log(chalk.yellow('Downloading dependencies. This might take a moment.'));
       console.log();
       await retry(() => installFromCache(root), {
         retries: 3,
@@ -80,7 +80,6 @@ export async function createApp({
       return `${key}@${packageJson.dependencies[key]}`;
     });
     if (dependencies.length) {
-      console.log();
       console.log('Installing dependencies:');
       for (const dependency of dependencies) {
         console.log(`- ${chalk.cyan(dependency)}`);
@@ -119,6 +118,7 @@ export async function createApp({
     cdpath = appPath;
   }
 
+  console.log();
   console.log(`${chalk.green('Success!')} Created ${appName} at ${appPath}`);
   console.log('Inside that directory, you can run several commands:');
   console.log();
@@ -127,9 +127,6 @@ export async function createApp({
   console.log();
   console.log(chalk.cyan(`  ${packageManager} ${useYarn ? '' : 'run '}dev`));
   console.log('    Starts the development server.');
-  console.log();
-  console.log(chalk.cyan(`  ${packageManager} ${useYarn ? '' : 'run '}build:dll`));
-  console.log('    Builds the dll files.');
   console.log();
   console.log(chalk.cyan(`  ${packageManager} ${useYarn ? '' : 'run '}build:prod`));
   console.log('    Builds the app for production.');
