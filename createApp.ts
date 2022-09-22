@@ -119,17 +119,17 @@ export async function createApp({
   }
 
   console.log();
-  console.log(`${chalk.green('Success!')} Created ${appName} at ${appPath}`);
-  console.log('Inside that directory, you can run several commands:');
+  console.log(`${chalk.green('Success!')} The project ${appName} is created at ${appPath}`);
+  console.log('Inside the directory, you can run the following commands:');
   console.log();
   console.log(chalk.cyan(`  ${packageManager} ${useYarn ? '' : 'run '}create:ext`));
-  console.log('    Create a new extension.');
+  console.log('    Creates a new extension.');
   console.log();
   console.log(chalk.cyan(`  ${packageManager} ${useYarn ? '' : 'run '}dev`));
   console.log('    Starts the development server.');
   console.log();
   console.log(chalk.cyan(`  ${packageManager} ${useYarn ? '' : 'run '}build:prod`));
-  console.log('    Builds the app for production.');
+  console.log('    Builds the app for production to use.');
   console.log();
   console.log(chalk.cyan(`  ${packageManager} start`));
   console.log('    Runs the built app in production mode.');
