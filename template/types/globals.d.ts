@@ -15,5 +15,3 @@ interface Window {
 
 declare var t: any;
 declare var globals: any;
-// eslint-disable-next-line @typescript-eslint/naming-convention
-declare var __ENABLED_EXTENSIONS__: string[];

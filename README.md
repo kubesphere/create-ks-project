@@ -24,7 +24,7 @@ You don't need to install or configure tools like webpack, Babel, TypeScript, et
 Run the command:
 
 ```shell
-yarn create ks-ext frontend
+yarn create ks-project frontend
 ```
 
 The wizard will create the project `frontend` in the current directory.
@@ -61,7 +61,7 @@ And
 
 ## Options
 
-`create-ks-ext` comes with the following option:
+`create-ks-project` comes with the following option:
 
 * -f, --fast-mode: Install dependencies from a tarball.
 
