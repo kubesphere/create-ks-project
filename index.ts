@@ -38,7 +38,7 @@ async function run(): Promise<void> {
       type: 'text',
       name: 'path',
       message: 'What is your project named?',
-      initial: 'my-ext',
+      initial: 'ks-project',
       validate: name => {
         const validation = validateNpmName(path.basename(path.resolve(name)));
         if (validation.valid) {
@@ -94,13 +94,13 @@ async function notifyUpdate(): Promise<void> {
     if (res?.latest) {
       const pkgManager = getPkgManager();
       console.log(
-        chalk.yellow.bold('A new version of `create-ks-ext` is available!') +
+        chalk.yellow.bold('A new version of `create-ks-project` is available!') +
           '\n' +
           'You can update by running: ' +
           chalk.cyan(
             pkgManager === 'yarn'
-              ? 'yarn global add create-ks-ext'
-              : `${pkgManager} install --global create-ks-ext`,
+              ? 'yarn global add create-ks-project'
+              : `${pkgManager} install --global create-ks-project`,
           ) +
           '\n',
       );
