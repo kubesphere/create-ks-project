@@ -4,9 +4,7 @@
   "private": true,
   "main": "index.js",
   "license": "MIT",
-  "workspaces": [
-    "extensions/*"
-  ],
+  "workspaces": ["extensions/*"],
   "scripts": {
     "dev:client": "ksc dev -u true",
     "dev:server": "ksc-server",
@@ -17,11 +15,7 @@
     "build:ext": "ksc build:ext",
     "create:ext": "ksc create:ext"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
+  "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
@@ -141,16 +135,16 @@
     "yargs": "^17.0.1"
   },
   "dependencies": {
-    "@ks-console/bootstrap": "^4.0.0-alpha.34",
-    "@ks-console/server": "^4.0.0-alpha.24",
-    "@ks-console/shared": "4.0.0-alpha.29",
-    "@kubed/charts": "^0.0.12",
-    "@kubed/code-editor": "^0.0.18",
-    "@kubed/components": "^0.0.76",
-    "@kubed/diff-viewer": "^0.0.13",
+    "@ks-console/bootstrap": "^4.0.0-alpha.37",
+    "@ks-console/server": "^4.0.0-alpha.25",
+    "@ks-console/shared": "4.0.0-alpha.30",
+    "@kubed/charts": "^0.0.14",
+    "@kubed/code-editor": "^0.0.20",
+    "@kubed/components": "^0.0.80",
+    "@kubed/diff-viewer": "^0.0.15",
     "@kubed/hooks": "^0.0.14",
-    "@kubed/icons": "^0.0.11",
-    "@kubed/log-viewer": "^0.0.12",
+    "@kubed/icons": "^0.0.13",
+    "@kubed/log-viewer": "^0.0.14",
     "@kubed/stook": "^0.0.4"
   }
 }
