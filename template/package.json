@@ -38,6 +38,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.14.5",
     "@babel/plugin-proposal-pipeline-operator": "^7.15.0",
     "@babel/plugin-proposal-private-methods": "^7.14.5",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-proposal-throw-expressions": "^7.14.5",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-syntax-import-meta": "^7.10.4",
@@ -135,9 +136,9 @@
     "yargs": "^17.0.1"
   },
   "dependencies": {
-    "@ks-console/bootstrap": "^4.0.0-alpha.37",
-    "@ks-console/server": "^4.0.0-alpha.25",
-    "@ks-console/shared": "4.0.0-alpha.30",
+    "@ks-console/bootstrap": "^4.0.0-alpha.44",
+    "@ks-console/server": "^4.0.0-alpha.27",
+    "@ks-console/shared": "4.0.0-alpha.32",
     "@kubed/charts": "^0.0.14",
     "@kubed/code-editor": "^0.0.20",
     "@kubed/components": "^0.0.80",

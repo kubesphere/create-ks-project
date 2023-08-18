@@ -1,6 +1,6 @@
 {
   "name": "create-ks-project",
-  "version": "0.0.18",
+  "version": "0.0.21",
   "main": "index.js",
   "license": "MIT",
   "repository": {
