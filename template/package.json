@@ -136,9 +136,9 @@
     "yargs": "^17.0.1"
   },
   "dependencies": {
-    "@ks-console/bootstrap": "^0.0.1",
+    "@ks-console/bootstrap": "^0.0.2",
     "@ks-console/server": "^0.0.1",
-    "@ks-console/shared": "0.0.1",
+    "@ks-console/shared": "0.0.2",
     "@kubed/charts": "^0.0.14",
     "@kubed/code-editor": "^0.0.20",
     "@kubed/components": "^0.0.81",
