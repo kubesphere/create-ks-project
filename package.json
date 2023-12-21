@@ -1,21 +1,23 @@
 {
   "name": "create-ks-project",
-  "version": "0.0.22",
-  "main": "index.js",
-  "license": "MIT",
+  "version": "0.0.23",
   "repository": {
     "type": "git",
     "url": "https://github.com/kubesphere/create-ks-project"
   },
+  "license": "MIT",
+  "main": "index.js",
   "bin": {
     "create-ks-project": "./dist/index.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "ncc build ./index.ts -w -o dist/",
+    "prepublish": "yarn release",
     "prerelease": "rimraf ./dist/",
-    "release": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register",
-    "prepublish": "yarn release"
+    "release": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register"
   },
   "dependencies": {
     "@types/node": "^12.6.8",

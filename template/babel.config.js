@@ -1,4 +1,5 @@
 module.exports = {
+  sourceType: 'unambiguous',
   presets: [
     [
       '@babel/preset-env',
@@ -10,7 +11,7 @@ module.exports = {
   ],
   plugins: [
     '@babel/plugin-transform-runtime',
-    'lodash',
+    // 'lodash',
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-syntax-import-meta',
     ['@babel/plugin-proposal-decorators', { legacy: true }],
