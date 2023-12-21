@@ -2,23 +2,32 @@
   "name": "kubesphere-extensions",
   "version": "1.0.0",
   "private": true,
-  "main": "index.js",
   "license": "MIT",
+  "main": "index.js",
   "workspaces": ["extensions/*"],
   "scripts": {
+    "build:dll": "ksc build:dll",
+    "build:ext": "ksc build:ext",
+    "build:prod": "ksc build:prod",
+    "create:ext": "ksc create:ext",
+    "dev": "concurrently -k --raw 'yarn dev:client' 'yarn dev:server'",
     "dev:client": "ksc dev -u true",
     "dev:server": "ksc-server",
-    "dev": "concurrently -k --raw 'yarn dev:client' 'yarn dev:server'",
-    "start": "NODE_ENV=production ksc-server",
-    "build:dll": "ksc build:dll",
-    "build:prod": "ksc build:prod",
-    "build:ext": "ksc build:ext",
-    "create:ext": "ksc create:ext"
+    "start": "NODE_ENV=production ksc-server"
   },
   "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
-  "engines": {
-    "node": ">= 6.0.0",
-    "npm": ">= 3.0.0"
+  "dependencies": {
+    "@ks-console/bootstrap": "^0.0.5",
+    "@ks-console/server": "^0.0.1",
+    "@ks-console/shared": "0.0.4",
+    "@kubed/charts": "^0.0.14",
+    "@kubed/code-editor": "^0.0.20",
+    "@kubed/components": "^0.0.81",
+    "@kubed/diff-viewer": "^0.0.15",
+    "@kubed/hooks": "^0.0.14",
+    "@kubed/icons": "^0.0.13",
+    "@kubed/log-viewer": "^0.0.14",
+    "@kubed/stook": "^0.0.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
@@ -135,17 +144,8 @@
     "webpackbar": "^5.0.0-3",
     "yargs": "^17.0.1"
   },
-  "dependencies": {
-    "@ks-console/bootstrap": "^0.0.5",
-    "@ks-console/server": "^0.0.1",
-    "@ks-console/shared": "0.0.4",
-    "@kubed/charts": "^0.0.14",
-    "@kubed/code-editor": "^0.0.20",
-    "@kubed/components": "^0.0.81",
-    "@kubed/diff-viewer": "^0.0.15",
-    "@kubed/hooks": "^0.0.14",
-    "@kubed/icons": "^0.0.13",
-    "@kubed/log-viewer": "^0.0.14",
-    "@kubed/stook": "^0.0.4"
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
   }
 }
