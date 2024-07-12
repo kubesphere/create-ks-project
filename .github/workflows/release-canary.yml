@@ -1,4 +1,4 @@
-name: Release Packages Snapshot
+name: Release Snapshot
 
 on:
   push:
