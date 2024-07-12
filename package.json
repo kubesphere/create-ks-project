@@ -14,12 +14,10 @@
     "dist"
   ],
   "scripts": {
+    "build": "rimraf ./dist/ && ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register",
     "changeset:add": "changeset add",
     "dev": "ncc build ./index.ts -w -o dist/",
-    "prepublish": "yarn release",
-    "publish": "changeset version && changeset publish",
-    "prerelease": "rimraf ./dist/",
-    "release": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register"
+    "release": "changeset version && changeset publish"
   },
   "dependencies": {
     "@types/node": "^12.6.8",
