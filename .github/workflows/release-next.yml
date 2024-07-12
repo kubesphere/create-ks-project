@@ -1,9 +1,11 @@
-name: Release Packages
+name: Release Next
 
 on:
   push:
     branches:
-      - master
+      - next
+      - next-*
+      - next/*
   workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
@@ -28,11 +30,16 @@ jobs:
       - name: Build
         run: yarn release
 
-      - name: Create Release Pull Request or Publish to npm
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: yarn publish
+      - name: Generate changeset
+        run: yarn changeset version --snapshot next
+
+      - name: Creating .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish
+        run: yarn changeset publish --no-git-tag --tag next
