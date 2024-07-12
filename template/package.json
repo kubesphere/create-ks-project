@@ -17,17 +17,20 @@
   },
   "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
   "dependencies": {
-    "@ks-console/bootstrap": "^0.0.5",
-    "@ks-console/server": "^0.0.1",
-    "@ks-console/shared": "0.0.4",
-    "@kubed/charts": "^0.0.14",
-    "@kubed/code-editor": "^0.0.20",
-    "@kubed/components": "^0.0.81",
-    "@kubed/diff-viewer": "^0.0.15",
-    "@kubed/hooks": "^0.0.14",
-    "@kubed/icons": "^0.0.13",
-    "@kubed/log-viewer": "^0.0.14",
-    "@kubed/stook": "^0.0.4"
+    "@ks-console/appstore": "^4.1.1",
+    "@ks-console/bootstrap": "^4.1.1",
+    "@ks-console/console": "^4.1.1",
+    "@ks-console/core": "^4.1.1",
+    "@ks-console/locales": "^4.1.1",
+    "@ks-console/server": "^4.1.1",
+    "@ks-console/shared": "^4.1.1",
+    "@kubed/charts": "^0.0.22",
+    "@kubed/code-editor": "^0.0.27",
+    "@kubed/components": "^0.2.8",
+    "@kubed/diff-viewer": "^0.0.23",
+    "@kubed/hooks": "^0.0.18",
+    "@kubed/icons": "^0.0.20",
+    "@kubed/log-viewer": "^0.0.22"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
@@ -145,7 +148,6 @@
     "yargs": "^17.0.1"
   },
   "engines": {
-    "node": ">= 6.0.0",
-    "npm": ">= 3.0.0"
+    "node": ">= 16.0.0"
   }
 }

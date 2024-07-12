@@ -27,3 +27,6 @@ yarn-error.log*
 
 *.rdb
 .cache-loader
+
+.yalc/
+yalc.lock
