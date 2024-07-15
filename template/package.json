@@ -8,10 +8,12 @@
   "scripts": {
     "build:dll": "ksc build:dll",
     "build:ext": "ksc build:ext",
+    "build:prod": "ksc build:prod",
     "create:ext": "ksc create:ext",
     "dev": "concurrently -k --raw 'yarn dev:client' 'yarn dev:server'",
     "dev:client": "ksc dev -u true",
-    "dev:server": "ksc-server"
+    "dev:server": "ksc-server",
+    "start": "NODE_ENV=production ksc-server"
   },
   "browserslist": ["> 1%", "last 2 versions", "not ie <= 8"],
   "dependencies": {
