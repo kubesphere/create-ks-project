@@ -43,3 +43,9 @@ jobs:
 
       - name: Publish
         run: yarn changeset publish --no-git-tag --tag next
+
+      - name: Delete Branch
+        if: contains(github.ref, 'next')
+        run: |
+          branch=${GITHUB_REF#refs/heads/}
+          git push origin --delete $branch
