@@ -1,5 +1,11 @@
 # create-ks-project
 
+## 4.1.1
+
+### Patch Changes
+
+- bf79026: release
+
 ## 0.0.24
 
 ### Patch Changes
