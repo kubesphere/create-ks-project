@@ -1,6 +1,6 @@
 {
   "name": "create-ks-project",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "repository": {
     "type": "git",
     "url": "https://github.com/kubesphere/create-ks-project"
