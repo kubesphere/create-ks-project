@@ -1,6 +1,6 @@
 {
   "name": "create-ks-project",
-  "version": "0.0.23",
+  "version": "4.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/kubesphere/create-ks-project"
@@ -10,9 +10,7 @@
   "bin": {
     "create-ks-project": "./dist/index.js"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "rimraf ./dist/ && ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register",
     "changeset:add": "changeset add",
