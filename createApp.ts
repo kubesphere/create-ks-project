@@ -55,7 +55,6 @@ export async function createApp({
     'eslintrc.js',
     'gitignore',
     'prettierignore',
-    'prettierrc.js',
   ];
   renameFiles.forEach(file => {
     fs.renameSync(path.join(root, file), path.join(root, `.${file}`));
