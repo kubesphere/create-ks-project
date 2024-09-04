@@ -1,3 +1,8 @@
-node_modules
+.git/
+.history/
+**/node_modules/
+**/dist/
+**/v3dist/
+**/*.tsbuildinfo
 yarn.lock
 package-lock.json
