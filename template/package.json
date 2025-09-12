@@ -151,6 +151,9 @@
     "webpackbar": "^5.0.0-3",
     "yargs": "^17.0.1"
   },
+  "resolutions": {
+    "@types/minimatch": "^5.1.2"
+  },
   "engines": {
     "node": ">= 16.0.0"
   }
