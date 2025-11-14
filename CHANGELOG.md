@@ -1,5 +1,11 @@
 # create-ks-project
 
+## 4.1.3
+
+### Patch Changes
+
+- 795d8f0: chore: add .npmrc
+
 ## 4.1.2
 
 ### Patch Changes
