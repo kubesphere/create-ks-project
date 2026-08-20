@@ -21,9 +21,6 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "resolutions": {
-    "@types/minimatch": "^5.1.2"
-  },
   "dependencies": {
     "@ks-console/appstore": "^4.3.0",
     "@ks-console/bootstrap": "^4.3.0",
@@ -154,6 +151,9 @@
     "webpack-merge-json-plugin": "^0.1.0",
     "webpackbar": "^5.0.0-3",
     "yargs": "^17.0.1"
+  },
+  "resolutions": {
+    "@types/minimatch": "^5.1.2"
   },
   "engines": {
     "node": ">= 16.0.0"
