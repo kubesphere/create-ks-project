@@ -1,8 +1,8 @@
 # create-ks-project
 
-## 4.1.4
+## 4.3.0
 
-### Patch Changes
+### Minor Changes
 
 - d26174c: fix: align generated project dependencies with KSE Console 4.3
 
